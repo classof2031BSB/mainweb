@@ -6,14 +6,19 @@
 <meta charset="UTF-8">
 <title>2031 Class Of BSB</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+
 /* This only applies to screens smaller than 600px (Phones) */
 @media only screen and (max-width: 600px) {
   .banner {
-    padding: 20px; /* Smaller padding for smaller screens */
+    padding: 20px;
   }
 }
 
+/* =========================
+   HEX BACKGROUND
+========================= */
 
 .hex {
     position: fixed;
@@ -21,24 +26,8 @@
     height: 70px;
     background: rgba(255, 210, 100, 1);
     margin: 35px 0;
-    z-index: -10; 
+    z-index: -10;
     box-shadow: 0px 0px 25px rgba(255, 200, 50, 1);
-  .box {
-    position: relative; 
-}
- 
-.box-logo {
-    position: absolute;
-
-    bottom: 10px;
-    right: 10px;
-
-    width: 40px;
-    height: auto;
-
-    border-radius: 8px;
-}
-
 }
 
 .hex:before,
@@ -64,24 +53,12 @@
 .hex2 { top: 500px; right: 60px; }
 .hex3 { top: 900px; left: 200px; }
 
-.diagonal-strip {
-    position: fixed;
-    top: 100px;
-    left: -300px;
-    width: 200%;
-    height: 180px;
-    background: #f0b94d;
-    transform: rotate(-15deg);
-    z-index: -20; /* even further back */
-    opacity: 0.35;
-}
-
-
+/* =========================
+   BASE LAYOUT
+========================= */
 
 body {
-
     font-family: 'Poppins', sans-serif;
-
     background-color: #FFF0C4;
     background-image:
         linear-gradient(60deg, rgba(255, 200, 80, 0.15) 25%, transparent 25%),
@@ -89,16 +66,13 @@ body {
         linear-gradient(60deg, transparent 75%, rgba(255, 200, 80, 0.15) 75%),
         linear-gradient(-60deg, transparent 75%, rgba(255, 200, 80, 0.15) 75%);
     background-size: 80px 140px;
-
-    font-family: Lucida Sans;
-    background-color: #FFF0C4;
     text-align: center;
     margin: 0;
-    padding-top: 60px; /* space for banner */
+    padding-top: 60px;
+    transition: 0.3s;
 }
 
-
-
+/* TOP BANNER */
 .top-banner {
     width: 100%;
     background: linear-gradient(90deg, #FFD36E, #FFB347);
@@ -106,18 +80,15 @@ body {
     text-align: center;
     padding: 12px 0;
     font-weight: bold;
-
     position: fixed;
     top: 0;
     left: 0;
-
     z-index: 99999;
-  
 }
- */
 
+/* LINKS */
 .links a {
-    color: white;
+    color: #6C4425;
     text-decoration: none;
     margin: 10px;
     font-weight: bold;
@@ -127,6 +98,7 @@ body {
     text-decoration: underline;
 }
 
+/* BOXES */
 .box {
     background: #F6C46F;
     margin: 20px auto;
@@ -134,60 +106,18 @@ body {
     width: 80%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #ccc;
-  
-
-     position: relative; 
+    position: relative;
+    transition: 0.3s;
 }
 
-bumble-bee.gif {
-    position: absolute;
-
-    bottom: -25px;  
-    right: -25px;
-
-    width: 100px;
-
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
-    border: 2px solid white;
-  
+.box:hover {
+    transform: scale(1.02);
+ 
 }
-  
-  .banner {
-    position: relative; 
+.banner:hover {
+    transform: scale(1.02);
 }
-
-.banner-logo {
-    position: absolute;
-
-    bottom: 10px;
-    right: 10px;
-
-    width: 70px;
-
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%   { transform: translateY(0); }
-    30%  { transform: translateY(-5px); }
-    50%  { transform: translateY(0); }
-    70%  { transform: translateY(-3px); }
-    100% { transform: translateY(0); }
-}
-
-.box-logo {
-    position: absolute;
-
-    bottom: 10px;
-    right: 10px;
-
-    width: 40px;
-    height: auto;
-
-    border-radius: 8px;
-}
-
+/* BANNER */
 .banner {
     padding: 50px;
     margin: 20px;
@@ -201,53 +131,161 @@ bumble-bee.gif {
     linear-gradient(90deg, #f0b94d 2%, transparent 2.5%, transparent 97%, #f0b94d 97.5%, #f0b94d);
     background-size: 80px 140px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    position: relative;
 }
-.links a {
-    color: #6C4425;
-    text-decoration: none;
-    margin: 10px;
+
+/* LOGO ANIMATION */
+.banner-logo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 70px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* LATEST UPDATES */
+.latest-update {
+    background: linear-gradient(135deg, #ffd76a, #f0b94d);
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0px 0px 10px rgba(255,200,50,0.5); }
+    to { box-shadow: 0px 0px 25px rgba(255,220,100,1); }
+}
+
+/* MEME */
+.meme-corner {
+    margin-top: 30px;
+    background: #ffd76a;
+    padding: 10px 15px;
+    border-radius: 12px;
     font-weight: bold;
+    display: inline-block;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
 }
+
+/* =========================
+   DARK MODE (FIXED)
+========================= */
+
+.dark-mode {
+    background-color: #2b2118;
+    color: #fff4d6;
+}
+
+.dark-mode .box {
+    background: #4a3725;
+    color: #fff4d6;
+}
+
+.dark-mode .hex {
+    background: #2D1308;
+}
+
+.dark-mode .banner {
+    filter: brightness(0.8);
+}
+
+.dark-mode a {
+    color: #ffd76a;
+}
+
+.dark-mode .latest-update,
+.dark-mode .meme-corner {
+    background: #3a2a1f;
+    color: #fff4d6;
+}
+
+.dark-mode .top-banner {
+    background: #3a2a1f;
+    color: #fff3b0;
+}
+
 </style>
-  
-  
 </head>
 
+<script>
+
+/* =========================
+   DARK MODE (WITH SAVE)
+========================= */
+function darkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+/* =========================
+   MEME OF THE DAY
+========================= */
+const memes = [
+    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+    "https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif",
+    "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+    "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif"
+];
+
+function loadMemeOfTheDay() {
+    let day = new Date().getDate();
+    let index = day % memes.length;
+    document.getElementById("meme").src = memes[index];
+}
+
+/* LOAD SETTINGS */
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+    loadMemeOfTheDay();
+};
+
+</script>
+
 <body>
- 
+
+<button onclick="darkMode()">Dark Mode [beta]</button>
+
 <div class="top-banner">
     • Class of 2031 BSB [BETA]
 </div>
-
-
-<div class="diagonal-strip"></div>
 
 <div class="hex hex1"></div>
 <div class="hex hex2"></div>
 <div class="hex hex3"></div>
 
-
 <div class="navbar">
     <div class="links">
-            <a href="#">Home</a>
-            <a href="#">Announcements</a>
-            <a href="#">Study Guides</a>
-            <a href="#">Competitions</a>
-        </div>
-  
+        <a href="#">Home</a>
+        <a href="#">Announcements</a>
+        <a href="#">Study Guides</a>
+        <a href="#">Competitions</a>
+    </div>
 </div>
 
 <div class="banner">
     <h2>Welcome to Class of 2031 BSB</h2>
- 
-
     <img src="2031bsb.png" class="banner-logo">
-  
-</div>
 </div>
 
-<h5>P.S this website is unofficial and it isn't affliated by the school management, this channel and website is only ran by students.</h5
->
+<h5>
+P.S. this website is unofficial and not affiliated with school management.
+</h5>
 
 <div class="box">
     <h2>Announcements</h2>
@@ -262,30 +300,32 @@ bumble-bee.gif {
 <div class="box">
     <h2>Competitions</h2>
     <a href="https://classof2031bsb.github.io/Class-Of-2031-BSB-unfinished/">View Upcoming Competitions</a>
-
 </div>
 
-<p>
-    Visit our
-    <a href="https://whatsapp.com/channel/0029Vb68nJwBfxo6Ib6qhW0T">
-        Whatsapp Channel
-    </a>
-</p>
+
+</p> ─── ⋆⋅ lounge ⋅⋆ ───
 
 <div class="banner">
     <h2>Meet The Admins</h2>
 </div>
 
-<h5> website is still unfinished!</h5>
-<h3> </h3>
-  
-
-
-  
-  
-  
+<div class="latest-update">
+    <h1>Latest Updates</h1>
     
+    <p>May 13: Volunteers for Acquaintance Day is available</p>
+    <p>May 20: Semester Exams will start</p>
 </div>
-
+ 
+</div>
+<div 
+    <h2>─── ⋆⋅ Helpful Resources ⋅⋆ ─── </h2>
+</div>
+    <a href="https://dod.teams.microsoft.us/convene/">Microsoft Teams</a><br>
+    <a href="https://forms.gle/wLmFU2nio7dUaTk4A">Applications</a><br>
+    <a href="https://web.toddleapp.com/?type=studentLogin&usertype=student">Toddle</a>
+<p>
+Visit our
+<a href="https://whatsapp.com/channel/0029Vb68nJwBfxo6Ib6qhW0T">WhatsApp Channel</a>
+</div>
 </body>
 </html>
